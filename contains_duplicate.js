@@ -19,16 +19,19 @@ Output: true
 URL: https://leetcode.com/problems/contains-duplicate/description/
 */
 
-var nums = [1, 2, 3, 4];
+// [3, 3]
+
+// Array.from(numsMap.values()).includes(nums[i])
+
+var nums = [3, 3];
 
 var containsDuplicate = function (nums) {
   var numsMap = new Map();
   for (var i = 0; i < nums.length; i++) {
     if (numsMap.has(nums[i])) {
       return true;
-    } else {
-      numsMap.set(i, nums[i]);
     }
+    numsMap.set(nums[i], i);
   }
   return false;
 };
