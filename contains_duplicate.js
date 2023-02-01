@@ -21,8 +21,6 @@ URL: https://leetcode.com/problems/contains-duplicate/description/
 
 // [3, 3]
 
-// Array.from(numsMap.values()).includes(nums[i])
-
 var nums = [3, 3];
 
 var containsDuplicate = function (nums) {
