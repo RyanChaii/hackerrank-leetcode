@@ -30,3 +30,29 @@ nums is sorted in ascending order.
 url: https://leetcode.com/problems/binary-search/description/
 
 */
+
+var nums = [-1, 0, 3, 5, 9, 12];
+var target = 9;
+
+// var nums = [-1, 0, 3, 5, 9, 12];
+// var target = 2;
+
+var search = function (nums, target) {
+  leftpointer = 0;
+  rightpointer = nums.length - 1;
+
+  while (leftpointer <= rightpointer) {
+    mid = Math.floor((leftpointer + rightpointer) / 2);
+
+    if (target == nums[mid]) {
+      return mid;
+    } else if (target < nums[mid]) {
+      rightpointer = mid - 1;
+    } else {
+      leftpointer = mid + 1;
+    }
+  }
+  return -1;
+};
+
+console.log(search(nums, target));
